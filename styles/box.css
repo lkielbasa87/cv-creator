@@ -1,0 +1,114 @@
+/* BOX STYLES */
+.box {
+  /* background: hsla(0, 16%, 96%, 0.9); */
+  background-color: white;
+  width: 21cm;
+  height: 29.7cm;  
+  padding: 1cm;
+}
+
+.box h2 {
+  font-size: 14pt;
+  font-weight: 600;
+  /* margin: 0.2cm 0; */
+}
+
+/* BOX TITLE STYLES */
+.title h1 {
+  text-align: left;
+  font-size: 20pt;
+  text-transform: uppercase;
+}
+
+/* BOX HEADER STYLES */
+
+.header {
+  display: flex;
+  height: 4.5cm;    
+}
+
+.header .img {
+  width: 3.5cm;
+}
+
+.header .img img {
+  width: 3.5cm;
+  height: 4.5cm;
+}
+
+.header .contact {  
+  flex-grow: 1;
+}
+
+.header .contact h1 {
+  font-size: 20pt;
+  font-weight: bold;
+  display: inline;
+}
+
+.header .contact h2 {
+  font-size: 14pt;
+  margin: 0.2cm 0;
+}
+
+.header .contact .streetInfo {
+  display: inline;
+}
+
+.header .contact .cityInfo {
+  display: inline;
+}
+
+.header p {
+  line-height: 1.2em;
+}
+
+/* BOX DESCRIPTION STYLES */
+.description p {
+  margin: 0.5cm 0;
+}
+
+/* BOX EDUCATION STYLES */
+/* .education {
+  display: flex;
+} */
+
+.edu-date, .edu-date-highschool {
+  flex-grow: 1;
+  width: 25%;
+  
+}
+
+.edu-date p, .edu-date-highschool p {
+  display: inline-block;
+  
+}
+
+.edu-info, .edu-info-highschool {
+  flex-grow: 5;
+  line-height: 1.5em;
+  width: 25%;
+  /* background-color: yellow; */
+}
+
+.edu-info h3, .edu-info-highschool h3 {
+  font-size: 12pt;
+  font-weight: 600;
+}
+
+.entry, .entry-highschool {
+  display: flex;  
+}
+
+#entry1, #entry2 {
+  border: 1px dotted black;
+}
+
+.entry-remove {
+  cursor: pointer;
+  width: 17px;
+  height: 17px;
+  color: crimson;
+  font-weight: bold;
+  
+}

@@ -1,0 +1,190 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Creator</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/inputs.css">
+  <link rel="stylesheet" href="styles/box.css">
+  <link rel="stylesheet" href="styles/popup.css">
+</head>
+<body>
+  
+
+
+  <main>
+    <div class="content bg-light bg-gradient">
+      <!-- INPUTS SECTION -->
+      <div class="inputs bg-dark bg-gradient" style="--bs-bg-opacity: .75";>
+        <form action="" class="contact-form" style="display: none;">
+          <div class="contact-form-header bg-primary bg-gradient">
+            <h1>1. Dane kontaktowe</h1>
+            <h2>W pierwszej kolejności proszę o uzupełnienie swoich podstawowych danych kontaktowych jak imię, nazwisko, zawód, adres, numer telefonu oraz adres e-mail.</h2>
+          </div>          
+          <div class="contact-form-content">
+            <label for="inputName">Imię:</label><br>
+            <input type="text" id="inputName" placeholder="Imię"><br>
+            <label for="inputSecondName">Nazwisko:</label><br>
+            <input type="text" id="inputSecondName" placeholder="Nazwisko"><br>
+            <label for="inputProfession">Zawód:</label><br>
+            <input type="text" id="inputProfession" placeholder="Zawód"><br>
+            <label for="inputStreet">Ulica:</label><br>
+            <input type="text" id="inputStreet" placeholder="Ulica"><br>
+            <label for="inputStreetNumber">Numer domu:</label><br>
+            <input type="number" id="inputStreetNumber" placeholder="123"><br>
+            <label for="inputStreetLetter">Numer lokalu:</label><br>
+            <input type="text" id="inputStreetLetter" placeholder="XYZ"><br>
+            <label for="inputPostalCode">Kod pocztowy:</label><br>
+            <input type="text" id="inputPostalCode" placeholder="xx-xxx"><br>
+            <label for="inputCity">Miejscowość:</label><br>
+            <input type="text" id="inputCity" placeholder="Miejscowość"><br>
+            <label for="inputPhone">Numer telefonu:</label><br>
+            <input type="text" id="inputPhone" placeholder="Numer telefonu"><br>
+            <label for="inputEmail">Adres e-mail:</label><br>
+            <input type="text" id="inputEmail" placeholder="Adres e-mail"><br>
+            <label for="inputPhoto">Załaduj swoje zdjęcie</label><br>
+            <input type="file" id="inputPhoto" onchange="previewFile()">
+            <input class="bg-primary bg-gradient" type="submit" id="contactFormSubmit" value="Zatwierdź dane kontaktowe>">
+            <input class="bg-light bg-gradient" type="button" id="contactFormButtonNext" value="Przejdź dalej >">
+          </div>
+        </form>  
+        <form action="" class="description-form" style="display: none;">
+          <div class="description-form-header bg-primary bg-gradient">
+            <h1>2. Cel zawodowy</h1>
+            <h2>Proszę o uzupełnienie danych dotyczących celów zawodowych.</h2>
+          </div>
+          <div class="description-form-content">
+            <label for="inputDescription">Cel zawodowy:</label><br>
+            <textarea name="inputDescription" id="inputDescription" cols="30" rows="10" placeholder="Opcjonalnie proszę uzupełnić dane dotyczące celu zawodowego lub przejść dalej"></textarea>
+            <input class="bg-primary bg-gradient" type="submit" id="descriptionFormSubmit" value="Zatwierdź cel zawodowy >">
+            <div class="navButtons">
+              <input class="bg-light bg-gradient" type="button" id="descriptionFormButtonBack" value="< Wstecz">
+              <input class="bg-light bg-gradient" type="button" id="descriptionFormButtonNext" value="Przejdź dalej >">
+          </div>
+          </div>
+        </form>
+        <!-- Education INPUTS -->
+        <div class="popup-wrapper card">
+          <div class="popup bg-light bg-gradient">
+            <div class="popup-close">x</div>
+            <div class="popup-content card-body card-text">
+              <!-- <h2>NINJA SALE!!!!</h2> -->
+              <p class="popupPara lh-lg"></p>
+              <!-- <a href="#">view clothing</a> -->
+            </div>
+          </div>
+        </div>
+        
+        <form action="" class="education-form" style="display: block;">
+          <div class="education-form-header bg-primary bg-gradient">
+            <h1>3. Edukacja - szkoła wyższa</h1>
+            <h2>Proszę o uzupełnienie danych dotyczących edukacji.</h2>
+          </div>
+          <div class="education-form-content">
+            <label for="inputEducationSort">Wybierz rodzaj wykształcenia:</label><br>
+            <select class="form-select form-select-lg" multiple name="" id="inputEducationSort">
+              <option value="university">Szkoła wyższa</option>
+              <option value="highschool">Szkoła średnia</option>
+            </select><br>
+              <div class="university-inputs">
+                <label for="inputEducationFrom" id="inputEducationFromLabel" style="display: none;">Data od:</label>
+                <input type="date" id="inputEducationFrom" style="display: none;">
+                <label for="inputEducationTo" id="inputEducationToLabel" style="display: none;">Data do:</label>
+                <input type="date" id="inputEducationTo" style="display: none;">
+                <input type="text" id="inputSchool" placeholder="Nazwa uczelni" style="display: none;">
+                <input type="text" id="inputSubject" placeholder="Nazwa kierunku" style="display: none;">
+                <input type="text" id="inputTitle" placeholder="Uzyskany tytuł (opcjonalnie)" style="display: none;">
+              </div>
+              <div class="highschool-inputs">
+                <label for="highschool-education-from" id="highschool-education-from-label" style="display: none;">Data od:</label>
+                <input type="date" id="highschool-education-from" style="display: none;">
+                <label for="highschool-education-to" id="highschool-education-to-label" style="display: none;">Data do:</label>
+                <input type="date" id="highschool-education-to" style="display: none;">
+                <input type="text" id="highschool-name" placeholder="Nazwa szkoły:" style="display: none;">
+                <input type="text" id="highschool-profile" placeholder="Profil / wyuczony zawód:" style="display: none;">
+              </div>
+              <input class="bg-primary bg-gradient" type="submit" id="educationFormSubmit" value="Zatwierdź etap edukacji >">
+              <div class="navButtons">
+                <input class="bg-light bg-gradient" type="button" id="educationFormButtonBack" value="< Wstecz">
+                <input class="bg-light bg-gradient" type="button" id="educationFormButtonNext" value="Przejdź dalej >">                        
+              </div>
+          </div>
+        </form>
+        <div class="globalButtons">
+          <button class="printButton bg-secondary bg-gradient">Podgląd wydruku</button>      
+          <button class="saveButton bg-secondary bg-gradient">Zapisz do pliku</button>      
+        </div>
+
+      </div>
+      
+      <!-- CURRICULUM VITAE SECTION -->
+      <div class="box">
+        <section class="title">
+          <h1>Curriculum vitae</h1>
+          <hr>
+        </section>
+        <section class="header">
+          <div class="contact">
+            <h1 id="contactName">Imię</h1>
+            <h1 id="contactSecondName">Nazwisko</h1>
+            <h2 id="contactProfession">Zawód</h2>
+            <p class="streetInfo" id="contactStreet">Ulica</p> <p class="streetInfo" id="contactStreetNumber">123</p><p class="streetInfo" id="contactStreetLetter"></p><br>
+            <p class="cityInfo" id="contactPostalCode">xx-xxx</p> <p class="cityInfo" id="contactCity">Miejscowość</p>
+            <p id="contactPhone">Numer telefonu</p>
+            <p id="contactEmail">Adres e-mail</p>
+          </div>
+          <div class="img">
+            <img id="contactPhoto" src="images/photo.png" alt="photo">
+          </div>
+        </section>
+        <section class="description">
+          <p style="display: none;" id="descriptionTarget">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores quaerat impedit exercitationem hic aut accusantium aperiam minus odio, quo natus ipsum optio voluptatum earum porro.</p>
+        </section>
+        <h2>Wykształcenie</h2>
+        <hr>
+        <section class="education">
+          <article class="entry" id="first-entry">            
+            <div class="edu-date">
+              <p id="edu-date-from">Data od:</p>
+              <p>-</p>
+              <p id="edu-date-to">Data do:</p>
+            </div>
+            <div class="edu-info">
+              <article>
+                <h3 id="school">Nazwa uczelni:</h3>
+                <p id="subject">Profil:</p>
+                <p id="edu-title">Uzyskany tytuł: </p>
+              </article>
+            </div>
+          </article>          
+        </section>
+        <section class="education-highschool">
+          <article class="entry-highschool" id="first-entry-highschool">
+            <div class="edu-date-highschool">
+              <p id="edu-date-from-highschool">Data od:</p>
+              <p>-</p>
+              <p id="edu-date-to-highschool">Data do:</p>
+            </div>
+            <div class="edu-info-highschool">
+              <article>
+                <h3 id="school-highschool">Nazwa szkoły średniej:</h3>
+                <p id="subject-highschool">Profil:</p>
+              </article>
+            </div>
+          </article>
+        </section>
+        
+      </div>
+    </div>    
+  </main>
+
+  
+
+  <script src="scripts/contact-form.js "></script>
+  <script src="scripts/description-form.js"></script>
+  <script src="scripts/education-form.js"></script>
+  <script src="scripts/printButton.js"></script>
+</body>
+</html>
